@@ -33,6 +33,13 @@ sed -i "s@DOMAINTOCHANGE@$domain@g" ../conf/yunohost.conf
 sudo cp ../conf/yunohost.conf /etc/openvpn/
 sudo cp ../conf/ldap.conf /etc/openvpn/auth/
 
+# OpenVPN client configuration
+sudo cp ../conf/yunohost.ovpn /etc/openvpn/
+sudo sed -i "/<ca>/r /etc/ssl/certs/ca-yunohost_crt.pem" /etc/openvpn/yunohost.ovpn
+
+# Nginx configuration
+sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/openvpn.conf
+
 # IP forwarding
 sudo cp ../conf/sysctl /etc/sysctl.d/openvpn.conf
 sudo sysctl -p /etc/sysctl.d/openvpn.conf

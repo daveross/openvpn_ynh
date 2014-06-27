@@ -18,4 +18,6 @@ sudo rm -f /etc/openvpn/yunohost.conf \
     /etc/sysctl.d/openvpn.conf \
     /etc/cron.d/yunohost-openvpn \
     /etc/openvpn/yunohost.cron \
-    /var/log/openvpn.log
+    /var/log/openvpn.log \
+    /etc/openvpn/yunohost.ovpn \
+    /etc/nginx/conf.d/$domain.d/openvpn.conf
