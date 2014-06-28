@@ -35,6 +35,7 @@ sudo cp ../conf/ldap.conf /etc/openvpn/auth/
 
 # OpenVPN client configuration
 sudo cp ../conf/yunohost.ovpn /etc/openvpn/
+sudo sed -i "s@DOMAINTOCHANGE@$domain@g" /etc/openvpn/yunohost.ovpn
 sudo sed -i "/<ca>/r /etc/ssl/certs/ca-yunohost_crt.pem" /etc/openvpn/yunohost.ovpn
 
 # Nginx configuration
